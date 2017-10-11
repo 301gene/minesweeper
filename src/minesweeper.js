@@ -1,11 +1,17 @@
-const blankLine = '  |   |  ';
-console.log(`This is what an empty board would look like:
-${blankLine}
-${blankLine}
-${blankLine}`);
-const guessLine = '1 |   |  ';
-const bombLine = '  | B |  ';
-console.log(`This is what a board with a guess and a bomb on it would look like:
-${guessLine}
-${bombLine}
-${blankLine}`);
+const printBoard = board => {
+  console.log('Current Board:');
+  for (i = 0; i < 3; i++) {
+    console.log(board[i].join(' | '));
+  }
+};
+
+let board = [
+  [' ', ' ', ' '],
+  [' ', ' ', ' '],
+  [' ', ' ', ' ']
+];
+
+printBoard(board);
+board[0][1] = '1';
+board[2][2] = 'B';
+printBoard(board);
